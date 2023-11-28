@@ -10,6 +10,10 @@ data = pd.read_csv('data.csv')
 
 #define url/endpoint
 @app.get('/')
+def handler():
+    return {'message' : 'hello'}
+
+@app.get('/secret')
 def handler(request: Request):
     #retrieve header content from request
     headers = request.headers
